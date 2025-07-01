@@ -1,0 +1,11 @@
+const express = require("express")
+const { connect } = require("mongoose")
+const cors = require("cors")
+require("dotenv").config()
+const upload = require("express-fileupload")
+const app = express()
+
+app.use(express.urlencoded({extended:true}))
+app.use(express.json({extended:true}))
+app.use(cors({credentials:true,origin:['http://localhost:5174']}))
+app.listen(5000)
